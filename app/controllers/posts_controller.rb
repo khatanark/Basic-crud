@@ -25,7 +25,8 @@ class PostsController < ApplicationController
        end
 	end
 
-
+     # http://localhost:3000/posts/1/edit
+     #  this id is grab from the url.
 	def edit
        @post =Post.find(params[:id])
 	end
@@ -39,6 +40,12 @@ class PostsController < ApplicationController
 			render "edit"
 	end
    end 
+
+   def destroy 
+   	@post =Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path , :notice => "Your message is deleted"
+   end
 
 
 end
