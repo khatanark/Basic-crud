@@ -1,8 +1,10 @@
 <h1> Hello friends </h1>
 <% @posts.each do |post|%>
 <!-- two parameters are passed in the link_to 1. link , 2. Where to link  -->
-<%=  link_to post.title , post %>
-<%= post.content %>
+<%=  link_to post.title , post %><br>
+<%= post.content %><br>
+<%= link_to "Edit", edit_post_path(post.id) %><br>
 <hr>
 <%end%>
 <%= link_to "New Post" , new_post_path%> 
+	
